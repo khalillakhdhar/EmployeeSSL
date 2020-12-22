@@ -24,14 +24,18 @@ text-align:center;
     <div class="col-sm">
     </div>
     <div class="col-sm">
- <form>
+ <form method="post" action="AuthServlet">
  <table>
  <tr><td colspan="2"><h1>Connexion</h1></td></tr>
  <tr><td>Login:</td><td><input class="form-control" name="login" type="text" required></td></tr>
- <tr><td>Mot de passe:</td><td><input class="form-control" name="mdp" type="text" required></td></tr>
+ <tr><td>Mot de passe:</td><td><input class="form-control" name="mdp" type="password" required></td></tr>
  <tr><td colspan="2"> <input type="submit" class="btn btn-primary" value="se connecter"></td></tr>
  </table>
  </form>
+ <%
+ if(session.getAttribute("message")!=null)
+	 out.print(session.getAttribute("message"));
+ %>
     </div>
     <div class="col-sm">
     </div>
