@@ -56,15 +56,18 @@ public void setVh(long vh) {
 public Employee() {
 	super();
 }
+//pour verifier les champs textuels
 public boolean validateString(String teste)
 {
 return teste.isBlank();	
 
 }
+//pour recevoir la salaire sous forme d'une chaine (jsp)
 public void convertsalary(String s)
 {
 Float.parseFloat(s);
 }
+//conversion des heures
 public void convertvh(String volume)
 {
 	Long.parseLong(volume);
@@ -82,10 +85,19 @@ return this.getSalaire()>1540;
 public double taxes()
 {
 if(this.getSalaire()<2000)
-return this.getSalaire()*0.2;
+return this.getSalaire()*0.02;
 else if(this.getSalaire()<3500)
-	return this.getSalaire()*0.4;
+	return this.getSalaire()*0.04;
 else
-	return this.getSalaire()*0.8;
+	return this.getSalaire()*0.08;
 }
+@Override
+public String toString() {
+	return "Employee [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", salaire=" + salaire
+			+ ", vh=" + vh + ", taxes=" + taxes() + "]";
+}
+
+
+
+
 }
